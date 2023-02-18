@@ -1,0 +1,414 @@
+@charset "UTF-8";
+/* ==================================Обнуляющий стиль===================== */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+li {
+  /* Убираем маркировку */
+  list-style: none;
+}
+
+/* Убирает подчеркивание у ссылки и подсвечивание ссылком, по которым был произведён переход */
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Наследует для заголовков бразуерный шрифт для обынчых элементов */
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  /* Убирает отступ у изображений */
+  vertical-align: top;
+}
+
+body,
+html {
+  height: 100%;
+  line-height: 1;
+}
+
+/* ======================================================================= */
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+[class*=__container] {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: 1050px) {
+  [class*=__container] {
+    max-width: 970px;
+  }
+}
+@media (max-width: 991.98px) {
+  [class*=__container] {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767.98px) {
+  [class*=__container] {
+    max-width: none;
+  }
+}
+/* 
+*Размеры экранов
+Большие экраны - 1440px; 
+Маленькие экраны - не меньше 1024px;
+Планшеты - от 1024px до 768px;
+Мобильные устройствао - ниже 768px
+*/
+body {
+  background: #333;
+}
+
+.header_bottom:not(:last-child) {
+  margin-bottom: 50px;
+}
+.header__container {
+  padding: 10px 15px;
+}
+.header__title-name {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 0, 0.5);
+}
+
+.task-title-general {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 0, 0.5);
+  padding-left: 30px;
+  position: relative;
+}
+.task-title-general::before {
+  position: absolute;
+  padding-top: 2px;
+  font-size: 1.3rem;
+  top: 0;
+  left: 0;
+  content: "✓";
+}
+
+._bottom:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+._title-bottom:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.task-1__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(255, 255, 0, 0.5);
+  padding: 15px 30px;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  color: #fff;
+  border-radius: 10px;
+  text-shadow: 0 0 0 10px #000;
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.4s ease 0s;
+  transition: -webkit-box-shadow 0.4s ease 0s;
+  -o-transition: box-shadow 0.4s ease 0s;
+  transition: box-shadow 0.4s ease 0s;
+  transition: box-shadow 0.4s ease 0s, -webkit-box-shadow 0.4s ease 0s;
+}
+.task-1__btn:hover {
+  -webkit-box-shadow: 0 0 10px yellow;
+          box-shadow: 0 0 10px yellow;
+}
+.task-1__btn p {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.hide-toggle-icon {
+  display: none;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.animation-bye {
+  -webkit-animation-name: bye;
+          animation-name: bye;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+@-webkit-keyframes bye {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bye {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.show-toggle-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation-name: hello;
+          animation-name: hello;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+@-webkit-keyframes hello {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes hello {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.task-2__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(255, 255, 0, 0.5);
+  padding: 15px 30px;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  color: #fff;
+  border-radius: 10px;
+  text-shadow: 0 0 0 10px #000;
+  cursor: pointer;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  -webkit-transition: -webkit-box-shadow 0.4s ease 0s;
+  transition: -webkit-box-shadow 0.4s ease 0s;
+  -o-transition: box-shadow 0.4s ease 0s;
+  transition: box-shadow 0.4s ease 0s;
+  transition: box-shadow 0.4s ease 0s, -webkit-box-shadow 0.4s ease 0s;
+}
+.task-2__btn:hover {
+  -webkit-box-shadow: 0 0 10px yellow;
+          box-shadow: 0 0 10px yellow;
+}
+
+.chat-websocket {
+  padding: 20px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 10px #000;
+          box-shadow: 10px 10px 10px #000;
+  background: #fff;
+  max-width: 600px;
+}
+.chat-websocket__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  height: 30px;
+}
+.chat-websocket__action:not(:last-child) {
+  margin-bottom: 25px;
+}
+.chat-websocket__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+.chat-websocket__area-discuss {
+  width: 100%;
+  height: 400px;
+  overflow: auto;
+  padding: 10px;
+  outline: 5px solid #bad7ec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 15px;
+}
+.chat-websocket__area-discuss::-webkit-scrollbar {
+  width: 10px;
+  background-color: #6899ce;
+}
+.chat-websocket__area-discuss::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 9em;
+}
+.chat-websocket__area-discuss::-webkit-scrollbar-thumb:hover {
+  background-color: #154980;
+}
+
+.btn-chat {
+  cursor: pointer;
+  min-width: 120px;
+  height: 100%;
+  outline: 5px solid #bad7ec;
+  background: #bad7ec;
+  letter-spacing: 1px;
+  -webkit-transition: -webkit-box-shadow 0.4s ease 0s;
+  transition: -webkit-box-shadow 0.4s ease 0s;
+  -o-transition: box-shadow 0.4s ease 0s;
+  transition: box-shadow 0.4s ease 0s;
+  transition: box-shadow 0.4s ease 0s, -webkit-box-shadow 0.4s ease 0s;
+}
+.btn-chat:hover {
+  -webkit-box-shadow: 0 0 15px #3caeff;
+          box-shadow: 0 0 15px #3caeff;
+}
+
+#message {
+  width: 100%;
+  outline: 5px solid #bad7ec;
+  padding-left: 5px;
+}
+#message:focus {
+  -webkit-box-shadow: 0 0 15px #3caeff;
+          box-shadow: 0 0 15px #3caeff;
+}
+#message:focus::-webkit-input-placeholder {
+  font-size: 0;
+}
+#message:focus::-moz-placeholder {
+  font-size: 0;
+}
+#message:focus:-ms-input-placeholder {
+  font-size: 0;
+}
+#message:focus::-ms-input-placeholder {
+  font-size: 0;
+}
+#message:focus::placeholder {
+  font-size: 0;
+}
+
+.sent-user {
+  padding: 15px;
+  border: 5px solid #bad7ec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 15px;
+  width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  margin: 0 0 0 auto;
+  word-break: break-all;
+}
+
+.sent-server {
+  padding: 15px;
+  border: 5px solid #bad7ec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 15px;
+  width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.1rem;
+  word-break: break-all;
+}
+
+.geolocation-task-3 {
+  padding: 15px;
+  border: 5px solid #bad7ec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0 auto;
+  border-radius: 15px;
+  width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.1rem;
+  color: #6899ce;
+}
